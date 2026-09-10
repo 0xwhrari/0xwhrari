@@ -100,7 +100,3 @@ turning this into small tools i'd actually use.
 build → test → ship
 
 </div>
-
-<p align="center">
-  <img src="./assets/footer.png" alt="" width="100%" />
-</p>
