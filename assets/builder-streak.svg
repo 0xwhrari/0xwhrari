@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="270" viewBox="0 0 1600 270" role="img" aria-labelledby="title desc">
+  <title id="title">0xwhrari builder streak</title>
+  <desc id="desc">A non-numeric builder loop showing active work states</desc>
+  <defs>
+    <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse">
+      <path d="M28 0H0V28" fill="none" stroke="#75F0B0" stroke-opacity=".03"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="270" fill="#070B0B"/>
+  <rect width="1600" height="270" fill="url(#grid)"/>
+  <rect x="1" y="1" width="1598" height="268" fill="none" stroke="#75F0B0" stroke-opacity=".25"/>
+  <text x="52" y="42" fill="#75F0B0" fill-opacity=".75" font-family="Cascadia Mono, SFMono-Regular, Consolas, monospace" font-size="11" letter-spacing="4">BUILD LOOP / CURRENT</text>
+  <text x="1548" y="42" fill="#F2F1EA" fill-opacity=".35" text-anchor="end" font-family="Cascadia Mono, SFMono-Regular, Consolas, monospace" font-size="11" letter-spacing="3">READ → VERIFY → BUILD → SHIP → REPEAT</text>
+  <path d="M52 60H1548" stroke="#75F0B0" stroke-opacity=".18"/>
+
+  <g transform="translate(52 91)" font-family="Cascadia Mono, SFMono-Regular, Consolas, monospace">
+    <g>
+      <rect width="350" height="128" fill="#0A1110" stroke="#75F0B0" stroke-opacity=".22"/>
+      <text x="24" y="34" fill="#F2F1EA" fill-opacity=".48" font-size="11" letter-spacing="2">01 / CHAIN READS</text>
+      <text x="24" y="77" fill="#F2F1EA" font-size="21">canonical data</text>
+      <circle cx="24" cy="103" r="4" fill="#75F0B0"/>
+      <text x="39" y="108" fill="#75F0B0" font-size="11" letter-spacing="2">ACTIVE</text>
+    </g>
+    <g transform="translate(382 0)">
+      <rect width="350" height="128" fill="#0A1110" stroke="#75F0B0" stroke-opacity=".22"/>
+      <text x="24" y="34" fill="#F2F1EA" fill-opacity=".48" font-size="11" letter-spacing="2">02 / WALLET MODEL</text>
+      <text x="24" y="77" fill="#F2F1EA" font-size="21">convergence first</text>
+      <circle cx="24" cy="103" r="4" fill="#75F0B0"/>
+      <text x="39" y="108" fill="#75F0B0" font-size="11" letter-spacing="2">ITERATING</text>
+    </g>
+    <g transform="translate(764 0)">
+      <rect width="350" height="128" fill="#0A1110" stroke="#75F0B0" stroke-opacity=".22"/>
+      <text x="24" y="34" fill="#F2F1EA" fill-opacity=".48" font-size="11" letter-spacing="2">03 / TERMINAL UX</text>
+      <text x="24" y="77" fill="#F2F1EA" font-size="21">keyboard first</text>
+      <circle cx="24" cy="103" r="4" fill="#75F0B0"/>
+      <text x="39" y="108" fill="#75F0B0" font-size="11" letter-spacing="2">SHIPPING</text>
+    </g>
+    <g transform="translate(1146 0)">
+      <rect width="350" height="128" fill="#0A1110" stroke="#75F0B0" stroke-opacity=".22"/>
+      <text x="24" y="34" fill="#F2F1EA" fill-opacity=".48" font-size="11" letter-spacing="2">04 / LIVE COLLECTORS</text>
+      <text x="24" y="77" fill="#F2F1EA" font-size="21">end-to-end feed</text>
+      <circle cx="24" cy="103" r="4" fill="#F2F1EA" fill-opacity=".35"/>
+      <text x="39" y="108" fill="#F2F1EA" fill-opacity=".48" font-size="11" letter-spacing="2">NEXT</text>
+    </g>
+  </g>
+</svg>

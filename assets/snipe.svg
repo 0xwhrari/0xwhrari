@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="480" viewBox="0 0 1600 480" role="img" aria-labelledby="title desc">
+  <title id="title">SNIPE — Robinhood Chain new-token terminal</title>
+  <desc id="desc">A terminal-style project card for the public SNIPE repository</desc>
+  <defs>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#75F0B0" stroke-opacity=".035"/>
+    </pattern>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#75F0B0" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#75F0B0" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="480" fill="#070B0B"/>
+  <rect width="1600" height="480" fill="url(#grid)"/>
+  <path d="M64 56H1536" stroke="#75F0B0" stroke-opacity=".2"/>
+  <text x="64" y="39" fill="#75F0B0" fill-opacity=".75" font-family="Cascadia Mono, SFMono-Regular, Consolas, monospace" font-size="11" letter-spacing="4">PUBLIC BUILD / 01</text>
+  <text x="1536" y="39" fill="#F2F1EA" fill-opacity=".38" text-anchor="end" font-family="Cascadia Mono, SFMono-Regular, Consolas, monospace" font-size="11" letter-spacing="3">ROBINHOOD CHAIN · ALPHA / RESEARCH</text>
+
+  <g transform="translate(64 96)">
+    <path d="M0 4h14v14H0z" transform="rotate(45 7 11)" fill="#75F0B0"/>
+    <text x="32" y="84" fill="#F2F1EA" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="900" letter-spacing="-4">SNIPE</text>
+    <text x="34" y="126" fill="#75F0B0" font-family="Cascadia Mono, SFMono-Regular, Consolas, monospace" font-size="15" letter-spacing="4">NEW-TOKEN TERMINAL</text>
+    <text x="34" y="174" fill="#F2F1EA" fill-opacity=".75" font-family="Arial, Helvetica, sans-serif" font-size="22">wallet convergence, launch context, readable decisions.</text>
+    <g transform="translate(34 218)" font-family="Cascadia Mono, SFMono-Regular, Consolas, monospace" font-size="13" letter-spacing="1.4">
+      <rect width="600" height="46" fill="#0B1311" stroke="#75F0B0" stroke-opacity=".35"/>
+      <text x="18" y="29" fill="#75F0B0">$</text>
+      <text x="42" y="29" fill="#F2F1EA">npm run demo</text>
+      <text x="574" y="29" fill="#75F0B0" text-anchor="end">PUBLIC REPO</text>
+    </g>
+    <text x="34" y="312" fill="#F2F1EA" fill-opacity=".38" font-family="Cascadia Mono, SFMono-Regular, Consolas, monospace" font-size="11" letter-spacing="2.3">FRESH TOKEN → WALLET BURST → SOURCE INTEL → LOCK / TRACK / DROP</text>
+  </g>
+
+  <g transform="translate(810 82)">
+    <rect width="726" height="334" fill="#09100F" stroke="#75F0B0" stroke-opacity=".32"/>
+    <rect width="726" height="334" fill="url(#glow)"/>
+    <path d="M0 44H726M363 44V334M0 188H726" stroke="#75F0B0" stroke-opacity=".2"/>
+    <circle cx="20" cy="22" r="3" fill="#75F0B0"/>
+    <text x="38" y="27" fill="#F2F1EA" fill-opacity=".42" font-family="Cascadia Mono, SFMono-Regular, Consolas, monospace" font-size="10" letter-spacing="2.2">SNIPE / TERMINAL FRAME</text>
+
+    <g font-family="Cascadia Mono, SFMono-Regular, Consolas, monospace">
+      <text x="26" y="76" fill="#75F0B0" font-size="11" letter-spacing="2.2">NEW TARGETS</text>
+      <text x="26" y="108" fill="#F2F1EA" fill-opacity=".72" font-size="14">fresh launches / burst / flow</text>
+      <text x="26" y="135" fill="#F2F1EA" fill-opacity=".46" font-size="13">GMGN audit / Pons / fomo</text>
+      <rect x="26" y="151" width="104" height="23" fill="#75F0B0" fill-opacity=".1" stroke="#75F0B0" stroke-opacity=".55"/>
+      <text x="78" y="167" fill="#75F0B0" text-anchor="middle" font-size="10" letter-spacing="1.5">FEED LIVE</text>
+
+      <text x="389" y="76" fill="#75F0B0" font-size="11" letter-spacing="2.2">TARGET SCOPE</text>
+      <text x="389" y="108" fill="#F2F1EA" fill-opacity=".72" font-size="14">selected token / risk / curve</text>
+      <text x="389" y="144" fill="#F2F1EA" font-size="16" font-weight="700">LOCK  /  TRACK  /  DROP</text>
+
+      <text x="26" y="220" fill="#75F0B0" font-size="11" letter-spacing="2.2">HOT WALLETS</text>
+      <text x="26" y="252" fill="#F2F1EA" fill-opacity=".72" font-size="14">wallet rank / pnl / cluster</text>
+      <text x="26" y="279" fill="#F2F1EA" fill-opacity=".46" font-size="13">entry timing / launch history</text>
+
+      <text x="389" y="220" fill="#75F0B0" font-size="11" letter-spacing="2.2">INTEL / EXEC</text>
+      <text x="389" y="252" fill="#F2F1EA" fill-opacity=".72" font-size="14">source merge / paper snipe</text>
+      <text x="389" y="279" fill="#F2F1EA" fill-opacity=".46" font-size="13">execution boundary / queue</text>
+      <text x="389" y="310" fill="#75F0B0" font-size="11" letter-spacing="1.8">NO BROWSER DASHBOARD</text>
+    </g>
+  </g>
+</svg>
