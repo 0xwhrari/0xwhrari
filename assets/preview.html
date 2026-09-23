@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>0xwhrari — GitHub profile preview</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #0d1117;
+      --panel: #0d1117;
+      --header: #010409;
+      --muted: #8b949e;
+      --text: #e6edf3;
+      --border: #30363d;
+      --accent: #2f81f7;
+      --green: #3fb950;
+      --code: #161b22;
+    }
+    * { box-sizing: border-box; }
+    html { background: var(--bg); }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .topbar {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 0 28px;
+      background: var(--header);
+      border-bottom: 1px solid #21262d;
+    }
+    .mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #f0f6fc;
+      color: #010409;
+      font-size: 19px;
+      font-weight: 800;
+    }
+    .search {
+      width: 350px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--muted);
+      background: var(--bg);
+    }
+    .toplinks { display: flex; gap: 16px; font-weight: 600; }
+    .spacer { flex: 1; }
+    .round { width: 28px; height: 28px; border: 1px solid var(--border); border-radius: 50%; }
+    .profile-tabs {
+      height: 56px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .tabs-inner {
+      width: 1216px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+      padding-right: 14px;
+    }
+    .tab { padding: 14px 14px 12px; color: var(--text); }
+    .tab.active { border-bottom: 2px solid #f78166; font-weight: 600; }
+    .shell {
+      width: min(1216px, calc(100vw - 48px));
+      margin: 24px auto 80px;
+      display: grid;
+      grid-template-columns: 296px minmax(0, 1fr);
+      gap: 24px;
+    }
+    .sidebar { margin-top: -54px; }
+    .avatar {
+      width: 260px;
+      height: 260px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      object-fit: cover;
+      background: #161b22;
+    }
+    .fallback-avatar {
+      width: 260px;
+      height: 260px;
+      display: none;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: linear-gradient(135deg, #161b22, #010409);
+      font: 700 54px ui-monospace, SFMono-Regular, Menlo, monospace;
+      color: #19e66b;
+    }
+    .name { margin: 14px 0 0; font-size: 24px; font-weight: 600; }
+    .login { margin: 0 0 14px; font-size: 20px; color: var(--muted); font-weight: 300; }
+    .bio { margin: 14px 0; font-size: 16px; }
+    .follow {
+      width: 100%;
+      padding: 6px 16px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #21262d;
+      color: var(--text);
+      font-weight: 600;
+    }
+    .meta { margin-top: 16px; color: var(--muted); }
+    .meta div { margin: 5px 0; }
+    .readme-card {
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--panel);
+      overflow: hidden;
+    }
+    .readme-title {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .markdown-body {
+      padding: 32px;
+      color: var(--text);
+      overflow-wrap: break-word;
+    }
+    .markdown-body > :first-child { margin-top: 0 !important; }
+    .markdown-body > :last-child { margin-bottom: 0 !important; }
+    .markdown-body h1, .markdown-body h2, .markdown-body h3,
+    .markdown-body h4, .markdown-body h5, .markdown-body h6 {
+      margin-top: 24px;
+      margin-bottom: 16px;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .markdown-body h1, .markdown-body h2 { padding-bottom: .3em; border-bottom: 1px solid #21262d; }
+    .markdown-body h1 { font-size: 2em; }
+    .markdown-body h2 { font-size: 1.5em; }
+    .markdown-body h3 { font-size: 1.25em; }
+    .markdown-body p, .markdown-body blockquote, .markdown-body ul,
+    .markdown-body ol, .markdown-body dl, .markdown-body table,
+    .markdown-body pre, .markdown-body details { margin-top: 0; margin-bottom: 16px; }
+    .markdown-body a { color: #2f81f7; text-decoration: none; }
+    .markdown-body a:hover { text-decoration: underline; }
+    .markdown-body strong { font-weight: 600; }
+    .markdown-body hr { height: .25em; padding: 0; margin: 24px 0; background: #21262d; border: 0; }
+    .markdown-body blockquote { padding: 0 1em; color: var(--muted); border-left: .25em solid #30363d; }
+    .markdown-body ul, .markdown-body ol { padding-left: 2em; }
+    .markdown-body li + li { margin-top: .25em; }
+    .markdown-body code {
+      padding: .2em .4em;
+      margin: 0;
+      font: 85% ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+      white-space: break-spaces;
+      background: rgba(110,118,129,.4);
+      border-radius: 6px;
+    }
+    .markdown-body pre {
+      padding: 16px;
+      overflow: auto;
+      font: 85% ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace;
+      line-height: 1.45;
+      background: var(--code);
+      border-radius: 6px;
+    }
+    .markdown-body pre code { padding: 0; background: transparent; border: 0; }
+    .markdown-body table { display: block; width: max-content; max-width: 100%; overflow: auto; border-spacing: 0; border-collapse: collapse; }
+    .markdown-body tr { background: var(--bg); border-top: 1px solid #21262d; }
+    .markdown-body tr:nth-child(2n) { background: #161b22; }
+    .markdown-body th, .markdown-body td { padding: 6px 13px; border: 1px solid var(--border); }
+    .markdown-body img { max-width: 100%; height: auto; background: var(--bg); }
+    .markdown-body details { display: block; }
+    .markdown-body summary { cursor: pointer; }
+    .markdown-body kbd {
+      padding: 3px 5px;
+      font: 11px ui-monospace, monospace;
+      color: var(--text);
+      background: #161b22;
+      border: solid 1px rgba(240,246,252,.1);
+      border-bottom-color: rgba(240,246,252,.25);
+      border-radius: 6px;
+      box-shadow: inset 0 -1px 0 rgba(240,246,252,.1);
+    }
+    @media (max-width: 900px) {
+      .toplinks, .search { display: none; }
+      .shell { grid-template-columns: 1fr; }
+      .sidebar { margin-top: 0; }
+      .avatar, .fallback-avatar { width: 112px; height: 112px; }
+      .profile-tabs { justify-content: flex-start; overflow: hidden; }
+      .tabs-inner { justify-content: flex-start; padding-left: 16px; }
+      .markdown-body { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="mark">◆</div>
+    <div class="search">Type / to search</div>
+    <nav class="toplinks"><span>Pull requests</span><span>Issues</span><span>Marketplace</span><span>Explore</span></nav>
+    <div class="spacer"></div>
+    <div class="round"></div><div class="round"></div>
+  </header>
+
+  <nav class="profile-tabs">
+    <div class="tabs-inner">
+      <div class="tab active">Overview</div>
+      <div class="tab">Repositories</div>
+      <div class="tab">Projects</div>
+      <div class="tab">Packages</div>
+      <div class="tab">Stars</div>
+    </div>
+  </nav>
+
+  <main class="shell">
+    <aside class="sidebar">
+      <img class="avatar" src="https://github.com/0xwhrari.png?size=260" alt="0xwhrari avatar" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'" />
+      <div class="fallback-avatar">0x</div>
+      <div class="name">0xwhrari</div>
+      <div class="login">0xwhrari</div>
+      <button class="follow">Follow</button>
+      <p class="bio">AI repositories · agents · automation · developer tooling</p>
+      <div class="meta"><div>⌁ independent developer</div><div>◈ building in public</div></div>
+    </aside>
+
+    <section class="readme-card">
+      <div class="readme-title">0xwhrari / README.md</div>
+      <article id="readme" class="markdown-body">Rendering README…</article>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    (async () => {
+      const target = document.getElementById('readme');
+      try {
+        const markdown = await fetch('./README.md').then((response) => {
+          if (!response.ok) throw new Error('README fetch failed');
+          return response.text();
+        });
+        target.innerHTML = marked.parse(markdown, { gfm: true, breaks: false });
+        document.querySelectorAll('a').forEach((link) => {
+          if (link.href.startsWith('http')) link.target = '_blank';
+        });
+        await Promise.all(Array.from(document.images).map((img) => {
+          if (img.complete) return Promise.resolve();
+          return new Promise((resolve) => {
+            img.addEventListener('load', resolve, { once: true });
+            img.addEventListener('error', resolve, { once: true });
+          });
+        }));
+        document.documentElement.dataset.rendered = 'true';
+      } catch (error) {
+        target.textContent = 'Preview failed: ' + error.message;
+        document.documentElement.dataset.rendered = 'error';
+      }
+    })();
+  </script>
+</body>
+</html>
